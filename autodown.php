@@ -31,7 +31,6 @@ header('Access-Control-Allow-Origin:*');
 	$raw .= file_get_contents('php://input'); 
 	echo '<p>'.$raw.'</p>';
 	
-	
 	//file_put_contents("D:/data.txt",$raw);
 
 ?>
