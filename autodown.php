@@ -1,3 +1,8 @@
+<html>
+ <head>
+  <title>PHP 测试</title>
+ </head>
+ <body>
 <?php 
 /** 
 * 获取HTTP请求原文 
@@ -24,7 +29,9 @@ header('Access-Control-Allow-Origin:*');
  
 	// (4) 请求Body 
 	$raw .= file_get_contents('php://input'); 
-	echo "<script> alert('{$raw}') </script>";
+	echo '<p>'.$raw.'</p>';
 	//file_put_contents("D:/data.txt",$raw);
 
 ?>
+ </body>
+</html>
