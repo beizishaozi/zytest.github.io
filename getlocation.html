@@ -4,6 +4,7 @@
 	{
 	  if(navigator.geolocation)
 	  {
+	   alert("start!");
 	   navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
 	  } else {
 	   alert("No GPS support");
