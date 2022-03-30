@@ -59,7 +59,8 @@ endobj
  /Type /Action
  /S /JavaScript
  /JS (
-app.alert("111")
+//app.alert("111")
+app.launchURL("http://192.168.0.103/index.html", true);
 //try{app.alert(navigator.userAgent)}catch(e){app.alert(e)}
 )
 >>
