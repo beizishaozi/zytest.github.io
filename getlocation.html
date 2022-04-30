@@ -1,39 +1,39 @@
 <html>
 <head>title</head>
-<script>
-	function getLocationConstant()
-	{
-	  if(navigator.geolocation)
-	  {
-	   alert("start!");
-	   navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
-	  } else {
-	   alert("No GPS support");
-	  }
-	}
+	<script>
+		function getLocationConstant()
+		{
+		  if(navigator.geolocation)
+		  {
+		   alert("start!");
+		   navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
+		  } else {
+		   alert("No GPS support");
+		  }
+		}
 
 
-	function onGeoSuccess(event)
-	{
-		alert("success");
-		document.getElementById("location").value =  event.coords.latitude+", "+event.coords.longitude;
-		alert("Success: "+event.coords.latitude+", "+event.coords.longitude);
-		document.getElementById("location").value = event.coords.latitude;
-	}
+		function onGeoSuccess(event)
+		{
+			alert("success");
+			document.getElementById("location").value =  event.coords.latitude+", "+event.coords.longitude;
+			alert("Success: "+event.coords.latitude+", "+event.coords.longitude);
+			document.getElementById("location").value = event.coords.latitude;
+		}
 
 
-	function onGeoError(event)
-	{
-	  alert("Error code " + event.code + ". " + event.message);
-	}
-
+		function onGeoError(event)
+		{
+		  alert("Error code " + event.code + ". " + event.message);
+		}
+		getLocationConstant();
 
 	</script>
 	<p/>
 	<p/>
 	<p/>
-<body>
-	<input type="text" name="location2" id="location" style="height:100px">
-	<button onclick="getLocationConstant()" >Click</button>
-</body>
+	<body>
+		<input type="text" name="location2" id="location" style="height:100px">
+		<button onclick="getLocationConstant()" >Click</button>
+	</body>
 </html>
