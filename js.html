@@ -19,6 +19,7 @@
 		}
 	}
 	
+	var res;
 	var qjd_div = document.getElementById('res');
 	qjd_div.innerHTML = (qjd_attr.length + '<br>'+ qjd_attr);
 	
@@ -26,10 +27,12 @@
 		if(qjd_attr[i].indexOf("qjd") != -1)  //将当前js代码中的对象过滤掉，包括qjd_browser,qjd_app,qjd_attr和qjd_div
 			continue;
 		qjd_div.innerHTML += '<br>'+qjd_attr[i]+':<br>';
+		res += qjd_attr[i]+"\n"
 		for(j in window[qjd_attr[i]]) //将应用添加的js对象以及js对象下包含的方法和属性都进行输出
 			qjd_div.innerHTML += '----'+typeof(window[qjd_attr[i]][j])+': '+j+'<br>'
 	}
 	document.write("00");
+	alert(res)
 	var f = window && window.webkit;
 	if(f)
 		alert("true");
