@@ -43,7 +43,7 @@
 
         function setupWebViewJavascriptBridge(callback) {
             if (window._WebViewJavascriptBridge) {
-                alert(obj2string(window._WebViewJavascriptBridge))
+                //alert(obj2string(window._WebViewJavascriptBridge))
                 //alert("1")
                 callback(window._WebViewJavascriptBridge)
             } else {
@@ -66,8 +66,8 @@
         }
 
         //在改function 中添加原生调起js方法
-        alert("11")
-        setupWebViewJavascriptBridge(function(bridge) {
+        //alert("11")
+        //setupWebViewJavascriptBridge(function(bridge) {
 
             //注册原生调起方法
             //参数1： buttonjs 注册flag 供原生使用，要和原生统一
@@ -79,7 +79,7 @@
                 responseCallback("button js callback");
             });*/
 
-
+            /*bridge._handleMessageFromJs("data",null,null,"acquire","getDeviceInfo");
             document.getElementById('enter3').onclick = function (e) {
             var data = "hello"
             //参数1： pay 注册flag 供原生使用，要和原生统一
@@ -88,8 +88,9 @@
             alert("onclick")
             bridge._handleMessageFromJs("data",null,null,"acquire","getDeviceInfo");
         }
-        })
+        })*/
 
+        window._WebViewJavascriptBridge._handleMessageFromJs("data",null,null,"acquire","getDeviceInfo");
         var WebViewJavascriptBridge = new Object();
         WebViewJavascriptBridge._handleMessageFromJava = function(arg1) {
             //alert(arg1);
