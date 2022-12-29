@@ -5,3 +5,9 @@ function getUserInfo(result){
     document.body.appendChild(oDiv);
 }
 //window.mkAobj.bridgejs("app", "getUserInfo", "{'callback':'getUserInfo'}");
+
+consle.log("this is a test");
+
+function getUser(a){
+    console.log(a);
+}
