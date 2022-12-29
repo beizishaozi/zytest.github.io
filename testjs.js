@@ -1,7 +1,7 @@
 
 var oDiv = document.createElement('div');
 oDiv.id = 'div1';
-//    oDiv.innerHTML = '566';
+oDiv.innerHTML = '566';
 document.body.appendChild(oDiv);
 
 
