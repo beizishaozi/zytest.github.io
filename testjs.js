@@ -4,4 +4,4 @@ function getUserInfo(result){
     oDiv.innerHTML = result;
     document.body.appendChild(oDiv);
 }
-window.mkAobj.bridgejs("app", "getUserInfo", "{'callback':'getUserInfo'}");
+//window.mkAobj.bridgejs("app", "getUserInfo", "{'callback':'getUserInfo'}");
