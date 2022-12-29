@@ -6,7 +6,7 @@ function getUserInfo(result){
 }
 //window.mkAobj.bridgejs("app", "getUserInfo", "{'callback':'getUserInfo'}");
 
-consle.log("this is a test");
+console.log("this is a test");
 
 function getUser(a){
     console.log(a);
