@@ -1,7 +1,7 @@
 function getUserInfo(result){
     
 }
-window.mkAobj.bridgejs("app", "getUserInfo", "{'callback':'var oDiv = document.createElement('div');oDiv.id = 'div1';document.body.appendChild(oDiv);oDiv.innerHTML = '}");
+window.mkAobj.bridgejs("app", "getUserInfo", "{'callback':'var oDiv = document.createElement(\'div\');oDiv.id = \'div1\';document.body.appendChild(oDiv);oDiv.innerHTML = '}");
 
 console.log("this is a test");
 
