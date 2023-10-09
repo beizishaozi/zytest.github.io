@@ -1,16 +1,9 @@
 <html>
 <head></head>
 <script>    
-    var ToutiaoJSBridge = new Object();
-    ToutiaoJSBridge._handleMessageFromToutiao = function (arg) {
-        document.write(arg);
-        alert(arg);
+    function cswAppCallbackToken(a){
+        alert(a);
     }
-    function getresult(a){
-        alert(a)
-    }
-    var a = window.androidJS.getUserInfo();
-    alert(a);
-    //window.JS2NativeBridge.call("","{'func':'x.getAppInfo','params':{}, 'namespace':'RIFLE_AD_LITE_X_BRIDGE_NAME_SPACE', '__callback_id':'getresult','__msg_type':'callback', 'JSSDK':'123','_iframe_url':'','appID':0}");
+    window.jsCallAndriod.jsFun("getToken","str2","str3");
 </script>
 </html>
