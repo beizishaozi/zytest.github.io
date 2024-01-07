@@ -35,17 +35,14 @@
             window.MFWAPPSDKNativeFunction.JSCallNative("{'callbackId':'111', 'method':'getCurrentLocationAsync', 'module':'location', 'params':{'onFinish':'function'}}");
             document.write("okok");
 
-            //var MFWAPP = new Object();
-            //MFWAPP.Calabash = new Object();
-            //MFWAPP.Calabash.core = new Object();
-            //MFWAPP.Calabash.core.handleCallback = function (arg1,arg2,arg3) {
-            //    var ar = obj2string(arg3);
+            var MFWAPP = new Object();
+            MFWAPP.Calabash = new Object();
+            MFWAPP.Calabash.core = new Object();
+            MFWAPP.Calabash.core.handleCallback = function (arg1,arg2,arg3) {
+                var ar = obj2string(arg3);
                 //document.write(ar);
-            //    alert(ar);
-            //}
-
-
-
+                alert(ar);
+            }
         </script>
     </body>
 </html>
