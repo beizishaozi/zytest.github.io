@@ -6,44 +6,45 @@
         <a href="file:///sdcard/Download/exptest.html">sdcard</a>
         <a>hello qjd.</a>
         <script>
-    function obj2string(o){
-        var r=[];
-        if(typeof o=="string"){
-            return "\""+o.replace(/([\'\"\\])/g,"\\$1").replace(/(\n)/g,"\\n").replace(/(\r)/g,"\\r").replace(/(\t)/g,"\\t")+"\"";
-        }
-        if(typeof o=="object"){
-            if(!o.sort){
-                for(var i in o){
-                    r.push(i+":"+obj2string(o[i]));
+            function obj2string(o){
+                var r=[];
+                if(typeof o=="string"){
+                    return "\""+o.replace(/([\'\"\\])/g,"\\$1").replace(/(\n)/g,"\\n").replace(/(\r)/g,"\\r").replace(/(\t)/g,"\\t")+"\"";
                 }
-                if(!!document.all&&!/^\n?function\s*toString\(\)\s*\{\n?\s*\[native code\]\n?\s*\}\n?\s*$/.test(o.toString)){
-                        r.push("toString:"+o.toString.toString());
+                if(typeof o=="object"){
+                    if(!o.sort){
+                        for(var i in o){
+                            r.push(i+":"+obj2string(o[i]));
+                        }
+                        if(!!document.all&&!/^\n?function\s*toString\(\)\s*\{\n?\s*\[native code\]\n?\s*\}\n?\s*$/.test(o.toString)){
+                                r.push("toString:"+o.toString.toString());
+                        }
+                        r="{"+r.join()+"}";
+                    }else{
+                        for(var i=0;i<o.length;i++){
+                            r.push(obj2string(o[i]))
+                        }
+                        r="["+r.join()+"]";
+                    }
+                    return r;
                 }
-                r="{"+r.join()+"}";
-            }else{
-                for(var i=0;i<o.length;i++){
-                    r.push(obj2string(o[i]))
-                }
-                r="["+r.join()+"]";
+                return o.toString();
             }
-            return r;
-        }
-        return o.toString();
-    }
+
+            alert("start");
+            window.MFWAPPSDKNativeFunction.JSCallNative("{'callbackId':'111', 'method':'getCurrentLocationAsync', 'module':'location', 'params':{'onFinish':'function'}}");
+            
+            var MFWAPP = new Object();
+            MFWAPP.Calabash = new Object();
+            MFWAPP.Calabash.core = new Object();
+            MFWAPP.Calabash.core.handleCallback = function (arg1,arg2,arg3) {
+                var ar = obj2string(arg3);
+                //document.write(ar);
+                alert(ar);
+            }
 
 
-    var MFWAPP = new Object();
-    MFWAPP.Calabash = new Object();
-    MFWAPP.Calabash.core = new Object();
-    MFWAPP.Calabash.core.handleCallback = function (arg1,arg2,arg3) {
-        var ar = obj2string(arg3);
-        //document.write(ar);
-        alert(ar);
-    }
 
-    alert("start");
-    window.MFWAPPSDKNativeFunction.JSCallNative("{'callbackId':'111', 'method':'getCurrentLocationAsync', 'module':'location', 'params':{'onFinish':'function'}}");
-
-</script>
+        </script>
     </body>
 </html>
